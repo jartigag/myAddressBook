@@ -11,11 +11,11 @@ import org.knowm.xchart.demo.charts.ExampleChart;
 public class MyPanel extends JPanel {
 	
 	public MyPanel(ArrayList<Integer> values) {
+		super();
 		ExampleChart<PieChart> exampleChart = new MyPieChart(values);
 		PieChart chart = exampleChart.getChart();
 		JPanel pnlChart = new XChartPanel(chart);      
 		add(pnlChart);
-		this.validate();
 	}
 
 	// PAINT: GRÁFICO DE BARRAS CONSTRUIDO A MANO
