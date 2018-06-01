@@ -11,9 +11,9 @@ import org.knowm.xchart.style.colors.BaseSeriesColors;
 
 public class MyPieChart implements ExampleChart<PieChart> {
 
-	private ArrayList<Integer> values = new ArrayList<Integer>();
+	private ArrayList<ArrayList> values = new ArrayList<ArrayList>();
  
-	public MyPieChart(ArrayList<Integer> values) {
+	public MyPieChart(ArrayList<ArrayList> values) {
 		super();
 		this.values = values;
 	}
@@ -41,24 +41,16 @@ public class MyPieChart implements ExampleChart<PieChart> {
 		
 		chart.getStyler().setSumVisible(true);
 		chart.getStyler().setSumFontSize(20f);
-		
+
 		// Series
-		chart.addSeries("tfno", values.get(0));
-		chart.addSeries("email", values.get(1));
-		chart.addSeries("ig", values.get(2));
-		chart.addSeries("fb", values.get(3));
-		chart.addSeries("tw", values.get(4));
-		chart.addSeries("sp", values.get(5));
+		chart.addSeries("phone", values.get(0).size());
+		chart.addSeries("email", values.get(1).size());
+		chart.addSeries("ig", values.get(2).size());
+		chart.addSeries("fb", values.get(3).size());
+		chart.addSeries("tw", values.get(4).size());
+		chart.addSeries("sp", values.get(5).size());
 
 		return chart;
-	}
-
-	public ArrayList<Integer> getValues() {
-		return values;
-	}
-
-	public void setValues(ArrayList<Integer> values) {
-		this.values = values;
 	}
 
 }
